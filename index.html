@@ -3,216 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Novax Science supplies premium research-use-only peptides with transparent batch documentation and secure packaging." />
-  <title>Novax Science — Precision for Research</title>
+  <meta name="description" content="Novax Science provides research-use-only peptide formats with batch-level verification and clear product identification." />
+  <title>Novax Science — Verify the Vial. Trust the Batch.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="notice">FOR LABORATORY RESEARCH USE ONLY · NOT FOR HUMAN OR VETERINARY USE</div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="research-notice">FOR LABORATORY RESEARCH USE ONLY · NOT FOR HUMAN OR VETERINARY USE</div>
 
-  <header class="nav-wrap">
-    <nav class="nav container">
+  <header class="site-header">
+    <nav class="nav shell">
       <a class="brand" href="#top" aria-label="Novax Science home">
-        <span class="brand-main">NOVAX</span>
-        <span class="brand-sub">SCIENCE</span>
+        <strong>NOVAX</strong>
+        <span>SCIENCE</span>
       </a>
-      <button class="menu-btn" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <button class="menu-button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
       <div class="nav-links">
         <a href="#products">Products</a>
         <a href="#quality">Quality</a>
-        <a href="#verification">Verification</a>
+        <a href="#verify">Verify Batch</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn-small" href="#contact">Request catalogue</a>
+        <a class="button compact" href="#verify">Verify a Product</a>
       </div>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="molecule molecule-one"></div>
-      <div class="molecule molecule-two"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <div class="eyebrow">NOVAX SCIENCE · RESEARCH MATERIALS</div>
-          <h1>Precision compounds.<br><span>Clear documentation.</span></h1>
-          <p class="lead">Research-use-only peptides presented with a clinical standard of identity, traceability and packaging.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#products">Explore products</a>
-            <a class="btn btn-ghost" href="#quality">Our quality approach</a>
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="molecule molecule-a"></div>
+      <div class="molecule molecule-b"></div>
+
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow reveal">NOVAX SCIENCE · RESEARCH MATERIALS</div>
+          <h1 class="reveal">Verify the vial.<br><span>Trust the batch.</span></h1>
+          <p class="hero-lead reveal">
+            A focused catalogue of research-use-only peptide formats supported by clear product identification, batch-level verification and responsible labelling.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="button" href="#verify">Verify a Batch <span>→</span></a>
+            <a class="button ghost" href="#products">View All Products</a>
           </div>
-          <div class="hero-meta">
-            <div><strong>≥99%</strong><span>Target purity*</span></div>
-            <div><strong>Batch ID</strong><span>Traceable labelling</span></div>
-            <div><strong>Secure</strong><span>Sealed packaging</span></div>
+
+          <div class="hero-stats reveal">
+            <div><strong>14</strong><span>Research formats</span></div>
+            <div><strong>Live</strong><span>Batch lookup</span></div>
+            <div><strong>Linked</strong><span>Source records</span></div>
           </div>
-          <small>*Where specified on the relevant batch documentation. Claims must be supported by a valid certificate of analysis.</small>
         </div>
 
-        <div class="product-stage reveal">
-          <div class="halo"></div>
-          <img src="assets/novax-retatrutide-packaging.jpeg" alt="Novax Science Retatrutide 10 mg research packaging" />
-          <div class="floating-card card-a"><b>STERILE A</b><span>Research format</span></div>
-          <div class="floating-card card-b"><b>10 mg</b><span>Retatrutide</span></div>
+        <div class="hero-product reveal">
+          <div class="product-orbit"></div>
+          <div class="product-wrap">
+            <img src="assets/novax-retatrutide.jpeg" alt="Novax Science Retatrutide 10 mg research packaging">
+          </div>
+          <div class="floating-label label-one">
+            <small>RESEARCH FORMAT</small>
+            <strong>Retatrutide · 10 mg</strong>
+          </div>
+          <div class="floating-label label-two">
+            <small>BATCH READY</small>
+            <strong>Verify by code</strong>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="trust-strip">
-      <div class="container trust-grid">
+    <section class="trust-bar">
+      <div class="shell trust-grid">
         <span>Research use only</span>
         <span>Batch-labelled</span>
-        <span>Tamper-aware packaging</span>
-        <span>Documentation-led</span>
+        <span>Secure packaging</span>
+        <span>Verification-led</span>
       </div>
     </section>
 
-    <section class="section intro">
-      <div class="container split">
-        <div>
-          <div class="eyebrow">BUILT AROUND TRANSPARENCY</div>
-          <h2>Science starts with knowing what is in the box.</h2>
-        </div>
-        <p>Novax Science is positioned as a research-material brand focused on clear product identity, responsible labelling and batch-level documentation. No therapeutic, diagnostic or performance claims are made.</p>
-      </div>
-    </section>
-
-    <section id="products" class="section products">
-      <div class="container">
-        <div class="section-head">
+    <section class="section products" id="products">
+      <div class="shell">
+        <div class="section-heading">
           <div>
-            <div class="eyebrow">RESEARCH CATALOGUE</div>
-            <h2>Featured compounds</h2>
+            <div class="eyebrow">COMPLETE CATALOGUE</div>
+            <h2>Fourteen focused<br>research formats.</h2>
           </div>
-          <a href="#contact" class="text-link">Request full catalogue →</a>
+          <p>Browse the current Novax Science product range. Select any format to continue to batch verification.</p>
         </div>
+
+        <div class="catalogue-count"><span>14</span> / 14</div>
 
         <div class="product-grid">
-          <article class="product-card featured">
-            <div class="product-visual"><img src="assets/novax-retatrutide-packaging.jpeg" alt="Retatrutide packaging"></div>
-            <div class="product-info">
-              <span class="tag">Featured</span>
+          <article class="product-card featured reveal">
+            <div class="product-image">
+              <img src="assets/novax-retatrutide.jpeg" alt="Retatrutide 10 mg">
+              <span class="image-badge">FEATURED</span>
+            </div>
+            <div class="product-copy">
+              <small>RESEARCH FORMAT</small>
               <h3>Retatrutide</h3>
-              <p>10 mg · Research use only</p>
-              <a href="#contact">Request documentation →</a>
+              <p>10 mg</p>
+              <a href="#verify" data-product="Retatrutide 10 mg">Verify batch <span>→</span></a>
             </div>
           </article>
-          <article class="product-card placeholder">
-            <div class="compound-mark">S</div>
-            <div class="product-info"><span class="tag">Catalogue</span><h3>Semaglutide</h3><p>Specifications by batch</p><a href="#contact">Enquire →</a></div>
-          </article>
-          <article class="product-card placeholder">
-            <div class="compound-mark">T</div>
-            <div class="product-info"><span class="tag">Catalogue</span><h3>Tirzepatide</h3><p>Specifications by batch</p><a href="#contact">Enquire →</a></div>
-          </article>
-          <article class="product-card placeholder">
-            <div class="compound-mark">B</div>
-            <div class="product-info"><span class="tag">Catalogue</span><h3>BPC-157</h3><p>Specifications by batch</p><a href="#contact">Enquire →</a></div>
-          </article>
+
+          <article class="product-card reveal"><div class="product-placeholder"><span>R30</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>Retatrutide</h3><p>30 mg</p><a href="#verify" data-product="Retatrutide 30 mg">Verify batch <span>→</span></a></div></article>
+          <article class="product-card reveal"><div class="product-placeholder"><span>GHK</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>GHK-Cu</h3><p>100 mg</p><a href="#verify" data-product="GHK-Cu 100 mg">Verify batch <span>→</span></a></div></article>
+          <article class="product-card reveal"><div class="product-placeholder"><span>NAD</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>NAD+</h3><p>500 mg</p><a href="#verify" data-product="NAD+ 500 mg">Verify batch <span>→</span></a></div></article>
+
+          <article class="product-card reveal"><div class="product-placeholder"><span>S10</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>Semaglutide</h3><p>10 mg</p><a href="#verify" data-product="Semaglutide 10 mg">Verify batch <span>→</span></a></div></article>
+          <article class="product-card reveal"><div class="product-placeholder"><span>T15</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>Tirzepatide</h3><p>15 mg</p><a href="#verify" data-product="Tirzepatide 15 mg">Verify batch <span>→</span></a></div></article>
+          <article class="product-card reveal"><div class="product-placeholder"><span>AOD</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>AOD-9604</h3><p>5 mg</p><a href="#verify" data-product="AOD-9604 5 mg">Verify batch <span>→</span></a></div></article>
+          <article class="product-card reveal"><div class="product-placeholder"><span>TES</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>Tesamorelin</h3><p>10 mg</p><a href="#verify" data-product="Tesamorelin 10 mg">Verify batch <span>→</span></a></div></article>
+
+          <article class="product-card reveal"><div class="product-placeholder"><span>PT</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>PT-141</h3><p>10 mg</p><a href="#verify" data-product="PT-141 10 mg">Verify batch <span>→</span></a></div></article>
+          <article class="product-card reveal"><div class="product-placeholder"><span>BT</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>BPC-157 + TB-500</h3><p>10 mg</p><a href="#verify" data-product="BPC-157 + TB-500 10 mg">Verify batch <span>→</span></a></div></article>
+          <article class="product-card reveal"><div class="product-placeholder"><span>KL</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>KLOW</h3><p>80 mg</p><a href="#verify" data-product="KLOW 80 mg">Verify batch <span>→</span></a></div></article>
+          <article class="product-card reveal"><div class="product-placeholder"><span>GL</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>GLOW</h3><p>70 mg</p><a href="#verify" data-product="GLOW 70 mg">Verify batch <span>→</span></a></div></article>
+
+          <article class="product-card reveal"><div class="product-placeholder"><span>CI</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>CJC + Ipamorelin</h3><p>10 mg</p><a href="#verify" data-product="CJC + Ipamorelin 10 mg">Verify batch <span>→</span></a></div></article>
+          <article class="product-card reveal"><div class="product-placeholder"><span>AHK</span></div><div class="product-copy"><small>RESEARCH FORMAT</small><h3>AHK-Cu</h3><p>100 mg</p><a href="#verify" data-product="AHK-Cu 100 mg">Verify batch <span>→</span></a></div></article>
         </div>
       </div>
     </section>
 
-    <section id="quality" class="section quality">
-      <div class="container quality-grid">
-        <div class="lab-panel reveal">
-          <div class="orb"></div>
-          <div class="lab-copy">
-            <span>QUALITY FRAMEWORK</span>
-            <strong>Identity.<br>Purity.<br>Traceability.</strong>
+    <section class="section quality" id="quality">
+      <div class="shell quality-grid">
+        <div class="quality-visual reveal">
+          <div class="quality-orb"></div>
+          <div class="quality-caption">
+            <small>TRACEABILITY STANDARD</small>
+            <strong>One code.<br>One record.</strong>
           </div>
         </div>
+
         <div class="quality-copy">
-          <div class="eyebrow">QUALITY WITHOUT THE HYPE</div>
-          <h2>A documentation-first standard.</h2>
-          <p>Every published specification should connect to supporting batch documentation. The website is intentionally designed to make certificates, identifiers and research-use limitations easy to find.</p>
-          <div class="check-list">
-            <div><i>01</i><span><b>Batch identification</b><small>Consistent product and lot references.</small></span></div>
-            <div><i>02</i><span><b>Certificate access</b><small>Documentation supplied when available and verified.</small></span></div>
-            <div><i>03</i><span><b>Responsible labelling</b><small>Clear research-only limitations across every product page.</small></span></div>
-            <div><i>04</i><span><b>Packaging integrity</b><small>Sealed presentation designed to reduce handling risk.</small></span></div>
+          <div class="eyebrow">BUILT FOR VERIFICATION</div>
+          <h2>Product identity that follows the batch.</h2>
+          <p>
+            Every verification request is checked against an exact active record. A successful result should identify the product, confirm the recorded date and provide access to the maintained source entry.
+          </p>
+
+          <div class="quality-points">
+            <div class="reveal">
+              <span>01</span>
+              <div><strong>Exact code matching</strong><p>The submitted code must match an active batch record exactly.</p></div>
+            </div>
+            <div class="reveal">
+              <span>02</span>
+              <div><strong>Dated verification</strong><p>Verified results return the date assigned to that specific batch.</p></div>
+            </div>
+            <div class="reveal">
+              <span>03</span>
+              <div><strong>Maintained source link</strong><p>Each successful result can connect directly to its current source record.</p></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="verification" class="section verify">
-      <div class="container verify-card">
-        <div>
-          <div class="eyebrow light">PRODUCT VERIFICATION</div>
-          <h2>Check a batch or supplier.</h2>
-          <p>Enter a batch identifier to begin a verification request. Connect this form to your verified internal database before launch.</p>
+    <section class="section verification" id="verify">
+      <div class="shell verify-panel reveal">
+        <div class="verify-copy">
+          <div class="eyebrow light">PRODUCT BATCH VERIFICATION</div>
+          <h2>Check the code<br>on your product.</h2>
+          <p>Enter the batch or serial number exactly as printed on the label. A verified result should display the product name, recorded date and source record.</p>
         </div>
-        <form id="verifyForm">
-          <label for="batch">Batch or serial number</label>
-          <div class="input-row">
-            <input id="batch" name="batch" placeholder="e.g. NOV-R10-0001" required />
-            <button type="submit" class="btn light-btn">Verify</button>
+
+        <form class="verify-form" id="verifyForm">
+          <label for="batchCode">Batch or serial number</label>
+          <div class="verify-row">
+            <input id="batchCode" name="batchCode" placeholder="E.G. NOV-R10-0001" autocomplete="off" required>
+            <button type="submit" class="button light-button">
+              <span class="button-text">Verify Product</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
           </div>
-          <small id="verifyMessage">Demo interface — no live verification database is connected.</small>
+          <div class="verify-result" id="verifyResult" aria-live="polite">
+            Enter a code to search the live batch database.
+          </div>
         </form>
       </div>
     </section>
 
-    <section class="section process">
-      <div class="container">
-        <div class="section-head">
-          <div><div class="eyebrow">HOW IT WORKS</div><h2>A clear research workflow</h2></div>
+    <section class="section faq" id="faq">
+      <div class="shell faq-grid">
+        <div>
+          <div class="eyebrow">FAQ</div>
+          <h2>Clear answers for responsible verification.</h2>
         </div>
-        <div class="steps">
-          <div><span>01</span><h3>Select</h3><p>Review specifications and intended research format.</p></div>
-          <div><span>02</span><h3>Document</h3><p>Request the applicable batch certificate and identifiers.</p></div>
-          <div><span>03</span><h3>Verify</h3><p>Confirm supplier, seal and batch details before acceptance.</p></div>
-          <div><span>04</span><h3>Store</h3><p>Follow the product-specific handling and storage documentation.</p></div>
-        </div>
-      </div>
-    </section>
 
-    <section id="faq" class="section faq">
-      <div class="container faq-grid">
-        <div><div class="eyebrow">FAQ</div><h2>Clear answers for responsible research procurement.</h2></div>
         <div class="accordion">
-          <details open><summary>Are Novax Science products intended for human use?</summary><p>No. Products displayed here are labelled exclusively for laboratory research and are not for human or veterinary use.</p></details>
-          <details><summary>How is a purity statement supported?</summary><p>Any purity statement should be supported by the applicable batch certificate of analysis. Do not publish unsupported blanket claims.</p></details>
-          <details><summary>Can I verify a batch online?</summary><p>The page includes a verification interface ready to connect to an internal database. It must not show a successful result until real records are integrated.</p></details>
-          <details><summary>Do you provide medical guidance or dosing information?</summary><p>No. Novax Science does not provide treatment recommendations, dosing guidance or medical advice.</p></details>
+          <details>
+            <summary>Are these products intended for human use?<span>+</span></summary>
+            <p>No. Novax Science products shown on this website are labelled exclusively for laboratory research and are not intended for human or veterinary use.</p>
+          </details>
+          <details>
+            <summary>What happens when a code is not found?<span>+</span></summary>
+            <p>The result should remain unverified. A missing or incorrect code must never be presented as a successful match.</p>
+          </details>
+          <details>
+            <summary>What information appears after verification?<span>+</span></summary>
+            <p>A verified result may display the product name, batch identifier, recorded date and a link to the maintained source record.</p>
+          </details>
+          <details>
+            <summary>How are product images updated?<span>+</span></summary>
+            <p>Product visuals can be replaced individually in the website assets folder without changing the verification workflow.</p>
+          </details>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <div class="container contact-card">
+    <section class="cta-section">
+      <div class="shell cta-panel reveal">
         <div>
-          <div class="eyebrow">CATALOGUE & DOCUMENTATION</div>
-          <h2>Request verified product information.</h2>
-          <p>Use this section for legitimate laboratory, distributor or research-business enquiries.</p>
+          <small>NOVAX SCIENCE</small>
+          <h2>Verify the product.<br>Confirm the batch.</h2>
         </div>
-        <form id="contactForm" class="contact-form">
-          <input type="text" name="name" placeholder="Name / organisation" required>
-          <input type="email" name="email" placeholder="Work email" required>
-          <select name="interest" required>
-            <option value="">Area of interest</option>
-            <option>Product catalogue</option>
-            <option>Batch documentation</option>
-            <option>Distribution enquiry</option>
-          </select>
-          <button class="btn" type="submit">Submit enquiry</button>
-          <small id="contactMessage">Demo form — connect to your CRM or email service before launch.</small>
-        </form>
+        <a href="#verify" class="button light-button">Verify a Product <span>→</span></a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div class="brand footer-brand"><span class="brand-main">NOVAX</span><span class="brand-sub">SCIENCE</span></div>
-      <p>Research materials presented with clarity and responsibility.</p>
-      <div class="footer-links"><a href="#products">Products</a><a href="#quality">Quality</a><a href="#faq">FAQ</a></div>
+    <div class="shell footer-main">
+      <a class="brand footer-brand" href="#top">
+        <strong>NOVAX</strong>
+        <span>SCIENCE</span>
+      </a>
+      <p>Research materials. Batch-level transparency.</p>
+      <div class="footer-links">
+        <a href="#products">Products</a>
+        <a href="#quality">Quality</a>
+        <a href="#verify">Verify Batch</a>
+        <a href="#faq">FAQ</a>
+      </div>
     </div>
-    <div class="container legal">
-      <p>FOR RESEARCH USE ONLY. NOT FOR HUMAN OR VETERINARY USE. This website does not provide medical advice, dosing guidance or therapeutic claims.</p>
+    <div class="shell footer-legal">
+      <p>For laboratory research use only. Not for human or veterinary use. No medical, treatment, dosing or performance claims are made.</p>
       <span>© 2026 Novax Science</span>
     </div>
   </footer>
