@@ -1,0 +1,41 @@
+NOVAX SCIENCE — EDITABLE WEBSITE V3
+
+EASIEST METHOD
+1. Open editor.html in your browser.
+2. Change wording, logo path, hero image path or product details.
+3. Click Download Updated content.js.
+4. Upload the downloaded content.js to GitHub and replace the old version.
+5. Commit. Cloudflare Pages publishes automatically.
+
+ADDING IMAGES OR A LOGO
+1. Upload the new image into your GitHub assets folder.
+2. Use a simple filename such as logo.png or semaglutide-10mg.jpg.
+3. Enter its path in the editor, for example:
+   assets/logo.png
+   assets/semaglutide-10mg.jpg
+
+NEW FEATURES
+- Product detail popup
+- Editable product summaries in content.js
+- Contact enquiry section
+- Browser-based editor
+- Image and logo paths controlled from content.js
+
+IMAGE FIX
+The main packaging image now uses:
+assets/novax-retatrutide.jpeg
+
+Make sure the assets folder and this exact file are uploaded to GitHub.
+File names are case-sensitive on Cloudflare Pages.
+
+
+V5 CATALOGUE UPDATE
+- Catalogue heading changed to: Premium research peptides.
+- RM pricing added to all 14 peptide cards.
+- Prices remain editable in content.js and editor.html.
+
+
+V6 PRODUCT DETAILS
+Each product now includes an original research overview shown when View Details is selected.
+Descriptions are stored in the summary field inside content.js and can be edited with GitHub.
+The wording intentionally excludes dosing instructions and medical-use claims.
