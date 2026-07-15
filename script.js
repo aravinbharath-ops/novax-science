@@ -1,0 +1,229 @@
+
+// Image fallback: use the main Novax packaging image if an editable image path is missing.
+document.addEventListener('error', event => {
+  const image = event.target;
+  if (image instanceof HTMLImageElement && !image.dataset.fallbackApplied) {
+    image.dataset.fallbackApplied = 'true';
+    image.src = image.id === 'heroImage' ? 'assets/logo.svg' : 'assets/novax-retatrutide.jpeg';
+  }
+}, true);
+
+const content = window.NOVAX_CONTENT || {};
+
+function applyContent() {
+  const hero = content.hero || {};
+  const heading = content.productsHeading || {};
+  const products = content.products || [];
+
+  document.querySelectorAll('.site-logo').forEach(img => {
+    if (content.brand?.logo) img.src = content.brand.logo;
+  });
+
+  const setText = (id, value) => {
+    const el = document.getElementById(id);
+    if (el && value) el.textContent = value;
+  };
+
+  setText('heroEyebrow', hero.eyebrow);
+  setText('heroTitle1', hero.titleLine1);
+  setText('heroTitle2', hero.titleLine2);
+  setText('heroDescription', hero.description);
+  setText('productsEyebrow', heading.eyebrow);
+  setText('productsTitle', heading.title);
+  setText('productsDescription', heading.description);
+  setText('contactEyebrow', content.contact?.eyebrow);
+  setText('contactTitle', content.contact?.title);
+  setText('contactDescription', content.contact?.description);
+
+  const heroImage = document.getElementById('heroImage');
+  if (heroImage && hero.image) heroImage.src = hero.image;
+
+  const grid = document.getElementById('productGrid');
+  if (grid) {
+    grid.innerHTML = products.map(product => {
+      const visual = product.image
+        ? `<div class="product-image">
+             <img src="${product.image}" alt="${product.name} ${product.amount}">
+             ${product.featured ? '<span class="image-badge">FEATURED</span>' : ''}
+           </div>`
+        : `<div class="product-placeholder"><span>${product.code || ''}</span></div>`;
+
+      return `<article class="product-card reveal">
+        ${visual}
+        <div class="product-copy">
+          <small>RESEARCH FORMAT</small>
+          <h3>${product.name}</h3>
+          <div class="product-meta"><p>${product.amount}</p><strong class="product-price">${product.price || ""}</strong></div>
+          <div class="product-actions">
+            <button type="button" class="details-button" data-product-index="${products.indexOf(product)}">View details</button>
+            <a href="#verify" data-product="${product.name} ${product.amount}">Verify batch <span>→</span></a>
+          </div>
+        </div>
+      </article>`;
+    }).join('');
+  }
+}
+
+applyContent();
+
+const header = document.querySelector('.site-header');
+const progress = document.querySelector('.scroll-progress');
+const menuButton = document.querySelector('.menu-button');
+const navLinks = document.querySelector('.nav-links');
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
+  header.classList.toggle('scrolled', y > 20);
+}, { passive: true });
+
+menuButton.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuButton.classList.toggle('open', open);
+  menuButton.setAttribute('aria-expanded', String(open));
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuButton.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+reveals.forEach((el, index) => {
+  el.style.transitionDelay = `${Math.min(index % 4, 3) * 70}ms`;
+  observer.observe(el);
+});
+
+document.querySelectorAll('[data-product]').forEach(link => {
+  link.addEventListener('click', () => {
+    const input = document.getElementById('batchCode');
+    input.placeholder = `Enter code for ${link.dataset.product}`;
+    setTimeout(() => input.focus(), 500);
+  });
+});
+
+const verifyForm = document.getElementById('verifyForm');
+const verifyResult = document.getElementById('verifyResult');
+
+verifyForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const code = document.getElementById('batchCode').value.trim().toUpperCase();
+  const records = window.NOVAX_CERTIFICATES || [];
+
+  verifyForm.classList.add('loading');
+  verifyResult.className = 'verify-result loading';
+  verifyResult.textContent = 'Searching the certificate registry…';
+
+  window.setTimeout(() => {
+    verifyForm.classList.remove('loading');
+    const record = records.find(item => item.serial.toUpperCase() === code);
+
+    if (!record) {
+      verifyResult.className = 'verify-result';
+      verifyResult.innerHTML = '<strong>Certificate not found.</strong><br>Check the serial number and enter it exactly as printed on the certificate.';
+      return;
+    }
+
+    verifyResult.className = 'verify-result success';
+    verifyResult.innerHTML = `<strong>Certificate verified.</strong><br>${record.product} · ${record.strength} · ${record.analysisDate}<br><button type="button" class="inline-certificate-button" data-certificate-serial="${record.serial}">View certificate</button>`;
+  }, 750);
+});
+
+// Product details modal
+const modal = document.getElementById('productModal');
+const modalVisual = document.getElementById('modalVisual');
+const modalTitle = document.getElementById('modalTitle');
+const modalAmount = document.getElementById('modalAmount');
+const modalSummary = document.getElementById('modalSummary');
+
+function openProductModal(product) {
+  modalTitle.textContent = product.name;
+  modalAmount.textContent = `${product.amount}${product.price ? " · " + product.price : ""}`;
+  modalSummary.textContent = product.summary || 'Research-use-only product format with batch-level identification.';
+  modalVisual.innerHTML = product.image
+    ? `<img src="${product.image}" alt="${product.name} ${product.amount}">`
+    : `<div class="modal-placeholder">${product.code || ''}</div>`;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeProductModal() {
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+document.addEventListener('click', event => {
+  const detailButton = event.target.closest('[data-product-index]');
+  if (detailButton) {
+    const product = (window.NOVAX_CONTENT.products || [])[Number(detailButton.dataset.productIndex)];
+    if (product) openProductModal(product);
+  }
+  if (event.target.closest('[data-close-modal]')) closeProductModal();
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeProductModal();
+});
+
+// Contact form demo
+document.getElementById('contactForm')?.addEventListener('submit', event => {
+  event.preventDefault();
+  const status = document.getElementById('contactStatus');
+  status.textContent = 'Thank you. Your demo enquiry has been recorded.';
+  event.currentTarget.reset();
+});
+
+
+// Certificate viewer
+const certificateModal = document.getElementById('certificateModal');
+const certificateGrid = document.getElementById('certificateGrid');
+const certificateImage = document.getElementById('certificateImage');
+const viewCertificateLink = document.getElementById('viewCertificateLink');
+
+function openCertificate(record) {
+  certificateGrid.innerHTML = `
+    <div><span>Serial number</span><strong>${record.serial}</strong></div>
+    <div><span>Product</span><strong>${record.product}</strong></div>
+    <div><span>Strength</span><strong>${record.strength}</strong></div>
+    <div><span>Task number</span><strong>#${record.taskNumber}</strong></div>
+    <div><span>Batch</span><strong>${record.batch}</strong></div>
+    <div><span>Analysis date</span><strong>${record.analysisDate}</strong></div>
+    <div><span>Measured result</span><strong>${record.result}</strong></div>
+    <div><span>Purity</span><strong>${record.purity}</strong></div>
+  `;
+  certificateImage.src = record.certificate;
+  viewCertificateLink.href = record.certificate;
+  certificateModal.classList.add('open');
+  certificateModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeCertificate() {
+  certificateModal.classList.remove('open');
+  certificateModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+document.addEventListener('click', event => {
+  const certificateButton = event.target.closest('[data-certificate-serial]');
+  if (certificateButton) {
+    const record = (window.NOVAX_CERTIFICATES || []).find(item => item.serial === certificateButton.dataset.certificateSerial);
+    if (record) openCertificate(record);
+  }
+  if (event.target.closest('[data-close-certificate]')) closeCertificate();
+});
