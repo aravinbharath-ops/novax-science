@@ -1,0 +1,84 @@
+NOVAX SCIENCE — EDITABLE WEBSITE V3
+
+EASIEST METHOD
+1. Open editor.html in your browser.
+2. Change wording, logo path, hero image path or product details.
+3. Click Download Updated content.js.
+4. Upload the downloaded content.js to GitHub and replace the old version.
+5. Commit. Cloudflare Pages publishes automatically.
+
+ADDING IMAGES OR A LOGO
+1. Upload the new image into your GitHub assets folder.
+2. Use a simple filename such as logo.png or semaglutide-10mg.jpg.
+3. Enter its path in the editor, for example:
+   assets/logo.png
+   assets/semaglutide-10mg.jpg
+
+NEW FEATURES
+- Product detail popup
+- Editable product summaries in content.js
+- Contact enquiry section
+- Browser-based editor
+- Image and logo paths controlled from content.js
+
+IMAGE FIX
+The main packaging image now uses:
+assets/novax-retatrutide.jpeg
+
+Make sure the assets folder and this exact file are uploaded to GitHub.
+File names are case-sensitive on Cloudflare Pages.
+
+
+V5 CATALOGUE UPDATE
+- Catalogue heading changed to: Premium research peptides.
+- RM pricing added to all 14 peptide cards.
+- Prices remain editable in content.js and editor.html.
+
+
+V6 PRODUCT DETAILS
+Each product now includes an original research overview shown when View Details is selected.
+Descriptions are stored in the summary field inside content.js and can be edited with GitHub.
+The wording intentionally excludes dosing instructions and medical-use claims.
+
+
+V7 CERTIFICATE LOOKUP
+Visible unique serial numbers added:
+- FYKH53UPUNAK — Retatrutide 30 mg
+- IV3UEG22E5WJ — BPC-157 10 mg
+
+The remaining four uploaded reports did not show a bottom unique key in the supplied images.
+Temporary lookup codes were added:
+- TASK-155862
+- TASK-87708
+- TASK-165760
+- TASK-123419
+
+Replace these temporary values in certificates.js when the actual bottom serial numbers are available.
+This current version performs lookup in browser JavaScript. For a secure production registry, move records to Cloudflare D1 and certificate files to R2.
+
+
+V8 FAQ AND TRUST UPDATE
+- FAQ replaced with peptide, certificate, testing and storage questions.
+- Added Why Novax Science section with four trust cards.
+- Wording remains research-use-only and avoids dosing or treatment claims.
+
+V16 LOGO UPDATE
+- Replaced the website logo with assets/novax-science-logo.png.
+- Updated the header, footer and animated hero logo.
+
+V18 FINAL ASSET UPDATE
+- Added transparent Novax Science logo across header, footer and hero.
+- Added BPC-157 + TB-500 10 mg product image.
+- Added NAD+ 500 mg product image.
+- Added KLOW 80 mg product image.
+- Existing D1 verification, contact form, enquiry database and admin dashboard remain unchanged.
+
+V19 WORDMARK UPDATE
+- Rebuilt the Novax Science logo as a transparent wordmark.
+- Removed the white/black background bands.
+- Removed the hero logo card background so only the lettering and teal line remain.
+
+V20 APPROVED LOGO UPDATE
+- Replaced the site logo with the approved Novax Science logo.
+- Converted the logo to a transparent PNG.
+- Updated header, hero and footer logo references.

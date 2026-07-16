@@ -1248,3 +1248,188 @@ body{
     width:82%!important;
   }
 }
+
+
+/* V19 clean transparent wordmark */
+.site-logo{
+  width:156px;
+  height:auto;
+  max-height:44px;
+  object-fit:contain;
+  object-position:left center;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+.hero-logo-panel{
+  inset:16% 10% 25%;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  transform:none!important;
+  padding:0!important;
+}
+
+.hero-product:hover .hero-logo-panel{
+  transform:none!important;
+  box-shadow:none!important;
+}
+
+.hero-logo-image{
+  width:min(84%,520px)!important;
+  height:auto!important;
+  object-fit:contain;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  filter:none!important;
+}
+
+.footer-logo,
+.footer .site-logo{
+  filter:none!important;
+  opacity:1!important;
+  background:transparent!important;
+}
+
+@media(max-width:620px){
+  .site-logo{
+    width:130px;
+    max-height:40px;
+  }
+  .hero-logo-panel{
+    inset:15% 7% 30%;
+  }
+  .hero-logo-image{
+    width:88%!important;
+  }
+}
+
+
+/* V20 approved Novax Science logo */
+.site-logo{
+  width:164px;
+  height:auto;
+  max-height:48px;
+  object-fit:contain;
+  object-position:left center;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+.hero-logo-panel{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+
+.hero-logo-image{
+  width:min(86%,540px)!important;
+  height:auto!important;
+  object-fit:contain;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  filter:none!important;
+}
+
+.footer-logo,
+.footer .site-logo{
+  opacity:1!important;
+  filter:none!important;
+  background:transparent!important;
+}
+
+@media(max-width:620px){
+  .site-logo{
+    width:136px;
+    max-height:42px;
+  }
+
+  .hero-logo-image{
+    width:90%!important;
+  }
+}
+
+
+/* V21 Light biotech colour theme */
+:root{
+  --ink:#17383d;
+  --background:#eef9fa;
+  --background-alt:#e4f6f7;
+  --surface:#ffffff;
+  --surface-soft:#f8fdfd;
+  --line:#d3eaeb;
+  --muted:#617d82;
+  --teal:#27c7c4;
+}
+
+html,body{
+  background:var(--background)!important;
+  color:var(--ink)!important;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at top right, rgba(39,199,196,.10), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(39,199,196,.08), transparent 30%);
+  pointer-events:none;
+  z-index:-1;
+}
+
+.hero,
+.quality,
+.catalogue,
+.verify,
+.contact,
+.faq{
+  background:transparent!important;
+}
+
+.hero{
+  background:linear-gradient(180deg,#f7fdfd 0%,#edf9fa 100%)!important;
+}
+
+.nav{
+  background:rgba(255,255,255,.78)!important;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.hero-visual-shell,
+.verify-panel,
+.contact-grid,
+.product-card,
+.why-card,
+.cta-panel,
+.faq details{
+  background:#fff!important;
+  border:1px solid var(--line)!important;
+  box-shadow:0 18px 45px rgba(23,56,61,.06)!important;
+}
+
+.footer{
+  background:#dff3f5!important;
+  color:var(--ink)!important;
+  border-top:1px solid var(--line);
+}
+
+.footer a,
+.footer p,
+.footer small{
+  color:var(--ink)!important;
+}
+
+.button.secondary{
+  background:#fff!important;
+  border:1px solid var(--teal)!important;
+  color:var(--teal)!important;
+}
