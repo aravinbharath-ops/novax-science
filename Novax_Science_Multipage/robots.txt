@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://novaxscience.com/sitemap.xml
