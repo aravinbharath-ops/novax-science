@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="styles.css"><title>Verify</title></head><body><div class="research-notice">FOR LABORATORY RESEARCH USE ONLY</div><header class="site-header"><nav class="nav shell"><a class="brand" href="index.html"><img class="site-logo" src="assets/novax-logo-v25.png"></a><div class="nav-links"><a href="index.html">Home</a><a href="product.html">Product</a><a href="verify.html">Verify</a><a href="contact.html">Contact</a></div></nav></header><main class="shell" style="padding:80px 0">
+<section class="verification" id="verify">
+<div class="verify-panel">
+<div class="verify-copy"><h1>Verify Product</h1><p>Enter the batch or serial number.</p></div>
+<form class="verify-form" id="verifyForm">
+<label>Batch or serial number</label>
+<div class="verify-row">
+<input id="batchCode" name="batchCode" required>
+<button type="submit" class="button light-button"><span class="button-text">Verify Product</span><span class="spinner"></span></button>
+</div>
+<div class="verify-result" id="verifyResult">Enter a code to search the live batch database.</div>
+</form></div></section>
+<div class="certificate-modal" id="certificateModal" aria-hidden="true">
+<div class="modal-backdrop" data-close-certificate></div>
+<div class="certificate-card"><button class="modal-close" data-close-certificate>×</button><div class="certificate-details"><div class="certificate-grid" id="certificateGrid"></div><a class="button" id="viewCertificateLink" target="_blank">Open Certificate</a></div><div class="certificate-preview"><img id="certificateImage"></div></div></div>
+</main><script src="content.js"></script><script src="certificates.js"></script><script src="script.js"></script></body></html>
