@@ -1,0 +1,28 @@
+NOVAX SCIENCE V30 — PREMIUM MULTI-PAGE PRODUCTION BUILD
+
+Built from the last working V25 foundation.
+
+Preserved unchanged:
+- functions/api/verify.js
+- functions/api/contact.js
+- functions/api/admin/enquiries.js
+- Cloudflare D1 schema and seed files
+- enquiry migration
+- admin area
+- certificate assets
+- product assets
+- favicon and web manifest
+
+Frontend fixes:
+- Correct verification POST payload: { serial: code }
+- Correct contact POST payload: name, email, enquiryType, message
+- Working certificate modal and direct Certificate of Analysis link
+- Premium desktop and mobile design
+- Mobile-first navigation and touch targets
+- 14 individual product pages
+- Quality, Verify, Knowledge, About, FAQ and Contact pages
+- SEO titles, descriptions, canonicals and structured data
+- sitemap.xml and robots.txt
+- Internal links validated
+
+Indexable URLs: 26
