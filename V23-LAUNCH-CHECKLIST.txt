@@ -1,8 +1,0 @@
-NOVAX SCIENCE V23 — LAUNCH CHECKLIST
-
-1. Upload all files to the GitHub repository root.
-2. Confirm Cloudflare Pages deploys successfully.
-3. Purge Cloudflare cache after deployment.
-4. Test the homepage, product images, verification, enquiry email and admin dashboard.
-5. Submit https://novaxscience.com/sitemap.xml to Google Search Console.
-6. Keep RESEND_API_KEY and ADMIN_TOKEN stored as Cloudflare Secrets.
