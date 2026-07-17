@@ -1,0 +1,75 @@
+NOVAX SCIENCE — LIVE ENQUIRY SYSTEM SETUP
+
+This version:
+- Saves every enquiry to Cloudflare D1
+- Sends an email notification through Resend
+- Includes an admin dashboard at /admin/
+
+STEP 1 — RUN THE D1 MIGRATION
+Open Cloudflare → D1 → novax-certificates → Console.
+Paste and execute the contents of enquiries-migration.sql.
+
+STEP 2 — CREATE A RESEND API KEY
+Create a Resend account and generate an API key.
+
+STEP 3 — ADD CLOUDFLARE VARIABLES AND SECRETS
+Cloudflare → Workers & Pages → novax-science → Settings → Variables and Secrets.
+
+Add:
+
+RESEND_API_KEY
+Your Resend API key. Mark it as encrypted/secret.
+
+CONTACT_TO_EMAIL
+The email address that should receive enquiries.
+
+RESEND_FROM_EMAIL
+Initially use:
+Novax Science <onboarding@resend.dev>
+
+After verifying your own domain in Resend, use:
+Novax Science <enquiries@yourdomain.com>
+
+ADMIN_TOKEN
+Create a long random secret, at least 32 characters.
+This token opens /admin/.
+
+STEP 4 — REDEPLOY
+Commit these files to GitHub. Cloudflare Pages will deploy automatically.
+Redeploy after adding variables and secrets.
+
+STEP 5 — TEST
+Submit the contact form.
+Confirm:
+- Success message appears
+- A row appears in the D1 enquiries table
+- An email reaches CONTACT_TO_EMAIL
+
+ADMIN DASHBOARD
+Open:
+https://your-site.pages.dev/admin/
+
+Enter the ADMIN_TOKEN configured in Cloudflare.
+
+SECURITY RECOMMENDATION
+For a production business, protect /admin/* with Cloudflare Access as an additional layer.
+
+V13 UI/UX UPDATE
+- Cleaner contact form with labels and grouped fields.
+- Improved mobile spacing and typography.
+- Cleaner cards, shadows and responsive layout.
+- Polished admin dashboard styling.
+
+V14 PREMIUM FINISHING PASS
+- Removed the hero supporting line.
+- Changed the secondary hero CTA to Browse Catalogue.
+- Refined spacing, typography, card interactions and navigation hover states.
+- Added smoother certificate and verification animations.
+- Improved mobile hero sizing and touch targets.
+
+V18 FINAL ASSET UPDATE
+- Added transparent Novax Science logo across header, footer and hero.
+- Added BPC-157 + TB-500 10 mg product image.
+- Added NAD+ 500 mg product image.
+- Added KLOW 80 mg product image.
+- Existing D1 verification, contact form, enquiry database and admin dashboard remain unchanged.
