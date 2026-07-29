@@ -1559,7 +1559,8 @@ p {
   transition: opacity 300ms ease, visibility 300ms ease;
 }
 
-.site-loader.hidden {
+.site-loader.hidden,
+.site-loader.is-hidden {
   visibility: hidden;
   opacity: 0;
 }
