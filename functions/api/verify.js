@@ -1,11 +1,15 @@
 export async function onRequestPost(context) {
   try {
     const body = await context.request.json();
-    const serial = String(body.serial || "").trim().toUpperCase();
+    const serial = String(body.serial || "")
+      .trim()
+      .toUpperCase()
+      .replace(/^#/, "")
+      .replace(/^TASK-/, "");
 
     if (!serial || serial.length > 80) {
       return Response.json(
-        { verified: false, message: "Enter a valid serial number." },
+        { verified: false, message: "Enter a valid certificate task number." },
         { status: 400 }
       );
     }
@@ -31,7 +35,7 @@ export async function onRequestPost(context) {
       return Response.json(
         {
           verified: false,
-          message: "No active certificate was found for this serial number."
+          message: "No active certificate was found for this task number."
         },
         { status: 404 }
       );
