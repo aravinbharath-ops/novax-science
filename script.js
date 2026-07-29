@@ -122,7 +122,11 @@ const verifyResult = document.getElementById('verifyResult');
 
 verifyForm?.addEventListener('submit', async event => {
   event.preventDefault();
-  const code = document.getElementById('batchCode').value.trim().toUpperCase();
+  const code = document.getElementById('batchCode').value
+    .trim()
+    .toUpperCase()
+    .replace(/^#/, '')
+    .replace(/^TASK-/, '');
 
   verifyForm.classList.add('loading');
   verifyResult.className = 'verify-result loading';
