@@ -1,6 +1,6 @@
 window.NOVAX_CONTENT = {
   brand: {
-    logo: "assets/novax-logo-v25.png"
+    logo: "assets/novax-wordmark-transparent.png"
   },
 
   hero: {
@@ -8,7 +8,7 @@ window.NOVAX_CONTENT = {
     titleLine1: "Research Grade Peptides",
     titleLine2: "Supported by Secure Batch Verification",
     description: "Novax Science provides a curated catalogue of laboratory research peptides supported by batch-specific verification and analytical documentation. Every authenticated product is linked to its corresponding production record, promoting transparency, traceability and confidence throughout the verification process.",
-    image: "assets/novax-logo-v25.png"
+    image: "assets/novax-wordmark-transparent.png"
   },
 
   productsHeading: {

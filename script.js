@@ -4,7 +4,7 @@ document.addEventListener('error', event => {
   const image = event.target;
   if (image instanceof HTMLImageElement && !image.dataset.fallbackApplied) {
     image.dataset.fallbackApplied = 'true';
-    image.src = image.id === 'heroImage' ? 'assets/novax-logo-v25.png' : 'assets/novax-retatrutide.jpeg';
+    image.src = image.id === 'heroImage' ? 'assets/novax-wordmark-transparent.png' : 'assets/novax-retatrutide.jpeg';
   }
 }, true);
 
